@@ -14,3 +14,15 @@
 .screen-header__icons i {
   margin-left: 15px;
 }
+
+.screen-header .fa-cog {
+  position: relative;
+}
+
+.screen-header .badge {
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: -7px;
+  right: -4px;
+}
