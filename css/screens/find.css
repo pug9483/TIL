@@ -97,4 +97,23 @@
 
 .open-post__heart-count span {
   margin-left: 3px;
+  font-size: 12px;
+}
+
+@keyframes heartBeat {
+  0% {
+    color: white;
+    transform: none;
+  }
+  50% {
+    color: tomato;
+    transform: scale(1.4);
+  }
+  100% {
+    color: white;
+  }
+}
+.open_post__photo:hover i {
+  will-change: transform;
+  animation: heartBeat 1.3s linear infinite;
 }

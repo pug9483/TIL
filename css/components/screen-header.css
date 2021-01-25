@@ -26,3 +26,16 @@
   top: -7px;
   right: -4px;
 }
+
+@keyframes rotateCog {
+  form {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.screen-header__icons .fa-cog:hover {
+  font-size: 32px;
+  animation: rotateCog 1.7s ease-out;
+}
