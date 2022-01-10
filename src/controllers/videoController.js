@@ -71,3 +71,18 @@ export const deleteVideo = async (req, res) => {
   await Video.findByIdAndDelete(id);
   return res.redirect("/");
 };
+
+export const search = async (req, res) => {
+  // console.log(req.query);
+  const { keyword } = req.query;
+  let videos = [];
+  // console.log("keyword", keyword);
+  if (keyword) {
+    videos = await Video.find({
+      title: {
+        $regex: new RegExp(`${keyword}`, "i"),
+      },
+    }).sort({ createdAt: "desc" });
+  }
+  return res.render("search", { pageTitle: "Search", videos });
+};
