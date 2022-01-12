@@ -6,6 +6,7 @@ import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +15,9 @@ import java.util.Optional;
 cmd + option + v : 변수명 알아서 지정*/
 
 // 스프링에 올라올 때, 이것을 스프링 컨테이너에 등록하게 된다.
+
+// 데이터를 저장하거나 변경할 때는 항상 @Transactional이 있어야 한다.
+@Transactional
 public class MemberService {
     // 회원 리포지토리 필요
     private final MemberRepository memberRepository;
