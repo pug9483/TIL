@@ -17,6 +17,7 @@
   "homepage": "https://github.com/pug9483/wetube#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "mongoose": "^6.1.4",
     "morgan": "^1.10.0",
