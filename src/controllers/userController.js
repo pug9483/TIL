@@ -33,8 +33,8 @@ export const postJoin = async (req, res) => {
     });
     return res.redirect("/login");
   } catch (error) {
-    return res.status(400).render("upload", {
-      pageTitle: "Upload Video",
+    return res.status(400).render("join", {
+      pageTitle: "Join",
       errorMessage: error._message,
     });
   }
@@ -122,6 +122,7 @@ export const finishGithubLogin = async (req, res) => {
       (email) => email.primary === true && email.verified === true
     );
     if (!emailObj) {
+      // set notification
       return res.redirect("/login");
     }
 
@@ -130,7 +131,7 @@ export const finishGithubLogin = async (req, res) => {
       const user = await User.create({
         name: userData.name,
         username: userData.login,
-        avatarUrl: userData.avatarUrl,
+        avatarUrl: userData.avatar_url,
         email: emailObj.email,
         password: "",
         socialOnly: true,
@@ -150,5 +151,65 @@ export const logout = (req, res) => {
   return res.redirect("/");
 };
 
-export const edit = (req, res) => res.send("Edit User");
+export const getEdit = (req, res) => {
+  return res.render("edit-profile", { pageTitle: "Edit Profile" });
+};
+
+export const postEdit = async (req, res) => {
+  const {
+    session: {
+      user: { _id },
+    },
+    body: { name, email, username, location },
+  } = req; // const id = req.session.user.id와 동일
+
+  // use mongo DB
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      name,
+      email,
+      username,
+      location,
+    },
+    { new: true }
+  );
+  req.session.user = updatedUser;
+  return res.redirect("/users/edit");
+};
+
+export const getChangePassword = (req, res) => {
+  return res.render("users/change-password", { pageTitle: "Change Password" });
+};
+
+export const postChangePassword = async (req, res) => {
+  const {
+    session: {
+      user: { _id },
+    },
+    body: { oldPassword, newPassword, newPasswordConfirmation },
+  } = req;
+
+  // confirm password
+  const user = await User.findById(_id);
+  const ok = await bcrypt.compare(oldPassword, user.password);
+  if (!ok) {
+    return res.status(400).render("users/change-password", {
+      pageTitle: "Change Password",
+      errorMessage: "The current password is incorrect.",
+    });
+  }
+  if (newPassword !== newPasswordConfirmation) {
+    return res.status(400).render("users/change-password", {
+      pageTitle: "Change Password",
+      errorMessage: "The new password doesn't match the confirmation.",
+    });
+  }
+  // update password
+  user.password = newPassword;
+  await user.save(); // pre save 작동
+  return res.redirect("/users/logout");
+  // send notification
+};
+
 export const see = (req, res) => res.send("See User");
