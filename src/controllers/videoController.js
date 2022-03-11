@@ -13,12 +13,12 @@ export const home = async (req, res) => {
 export const watch = async (req, res) => {
   const { id } = req.params;
   //id로 비디오를 찾을 수 있다.
-  const video = await Video.findById(id);
-  const owner = await User.findById(video.owner);
+  const video = await Video.findById(id).populate("owner");
+  console.log(video);
   if (!video) {
     return res.render("404", { pageTitle: "Video not found." });
   }
-  return res.render("watch", { pageTitle: video.title, video, owner });
+  return res.render("watch", { pageTitle: video.title, video });
 };
 
 export const getEdit = async (req, res) => {
@@ -51,12 +51,6 @@ export const getUpload = (req, res) => {
 };
 
 export const postUpload = async (req, res) => {
-  console.log(req.session.user);
-  // const {
-  //   user: { _id },
-  // } = req.session;
-  // const { path: fileUrl } = req.file;
-  // const { title, description, hashtags } = req.body;
   const {
     body: { title, description, hashtags },
     file: { path: fileUrl },
@@ -64,8 +58,6 @@ export const postUpload = async (req, res) => {
       user: { _id },
     },
   } = req;
-
-  console.log(title, description, hashtags, fileUrl, _id);
 
   try {
     await Video.create({
