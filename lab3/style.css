@@ -1,0 +1,92 @@
+.content {
+  display: grid;
+  height: 50vh;
+  grid-template:
+    "big_Ostrich1 big_Ostrich2" 1fr
+    "big_Ostrich3 big_Ostrich4" 1fr / 1fr 1fr;
+}
+
+.big_Ostrich1 {
+  grid-area: big_Ostrich1;
+  background-color: #dae7df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: red;
+}
+
+.big_Ostrich2 {
+  grid-area: big_Ostrich2;
+  background-color: #008a69;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+.big_Ostrich3 {
+  grid-area: big_Ostrich3;
+  background-color: #f44607;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+.big_Ostrich4 {
+  grid-area: big_Ostrich4;
+  display: grid;
+  grid-template:
+    "small_Ostrich1 small_Ostrich2" 1fr
+    "small_Ostrich3 small_Ostrich4" 1fr / 1fr 1fr;
+}
+
+.small_Ostrich1 {
+  grid-area: small_Ostrich1;
+  background-color: #f8abc5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  color: red;
+  font-weight: 600;
+}
+
+.small_Ostrich2 {
+  grid-area: small_Ostrich2;
+  background-color: #5f5fa9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  color: white;
+  font-weight: 600;
+}
+
+.small_Ostrich3 {
+  grid-area: small_Ostrich3;
+  background-color: #ffc028;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  color: red;
+  font-weight: 600;
+}
+
+.small_Ostrich4 {
+  grid-area: small_Ostrich4;
+  background-color: #f97374;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  color: white;
+  font-weight: 600;
+}
