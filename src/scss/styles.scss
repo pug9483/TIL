@@ -1,0 +1,14 @@
+@import "_variables";
+@import "_mixins";
+@import "_buttons";
+
+
+a{
+  @include responsive{
+    text-decoration: none;
+  }
+}
+
+button{
+  @extend %button;
+} 
