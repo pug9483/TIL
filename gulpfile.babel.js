@@ -8,10 +8,18 @@ import gulpSass from "gulp-sass";
 // sass.compiler = require("node-sass");
 const sass = gulpSass(dartSass);
 
+// const routes = {
+//   css: {
+//     watch: "src/scss/*",
+//     src: "src/scss/styles.scss",
+//     dest: "dest/css",
+//   },
+// };
+
 const routes = {
   css: {
-    watch: "src/scss/*",
-    src: "src/scss/styles.scss",
+    watch: "src/paint_box/scss/*",
+    src: "src/paint_box/scss/styles.scss",
     dest: "dest/css",
   },
 };
@@ -33,7 +41,7 @@ const watch = () => {
   gulp.watch(routes.css.watch, styles);
 };
 
-const clean = () => del(["dest/"]);
+const clean = () => del(["dest/styles.css"]);
 
 const prepare = gulp.series([clean]);
 

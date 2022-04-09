@@ -1,0 +1,146 @@
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+header div{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 0 1% 0 1%;
+}
+
+header div:nth-child(-n+5){
+    border-right: none;
+}
+
+header div:nth-child(1){
+    border-left: none;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "main_1 main_2 main_3"
+    "main_4 main_5 main_6"
+    "main_7 main_8 main_9";
+}
+
+.shape{
+    padding: 2%;
+}
+
+.shape__top, .shape__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shape img{
+    width: 90%;
+    height: 80%;
+    display: block;
+    margin: auto;
+}
+
+.shape__top{
+    font-size: 0.9em;
+}
+
+.shape__bottom{
+    font-size: 0.7em;
+}
+
+.main_1{
+    grid-area: main_1;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    border-right:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_2{
+    grid-area: main_2;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    border-right:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_3{
+    grid-area: main_3;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_4{
+    grid-area: main_4;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    border-right:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_5{
+    grid-area: main_5;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    border-right:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_6{
+    grid-area: main_6;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_7{
+    grid-area: main_7;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    border-right:  2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_8{
+    grid-area: main_8;
+    display: table-cell;
+    border-bottom:  2px solid black;
+    border-right:  2px solid black;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main_9{
+    grid-area: main_9;
+    display: table-cell;
+    border-bottom:  2px solid black;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
