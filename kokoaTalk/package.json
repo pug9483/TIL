@@ -1,0 +1,29 @@
+{
+  "name": "kokoatalk",
+  "version": "1.0.0",
+  "main": "init.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pug9483/kokoaTalk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pug9483/kokoaTalk/issues"
+  },
+  "homepage": "https://github.com/pug9483/kokoaTalk#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  }
+}
