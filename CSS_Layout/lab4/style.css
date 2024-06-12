@@ -1,0 +1,89 @@
+main{
+    display: grid;
+    /* grid-template-columns: repeat(4, minmax(max-content, 1fr)); */
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    grid-template-rows: repeat(3,  minmax(130px, max-content));
+    grid-template-areas: 
+    "box1 box2 box3 box4" 
+    "box5 box6 box3 box4" 
+    "box5 box7 box3 box4" 
+}
+
+.box1{
+    grid-area: box1;
+    background-color: #000000;
+    color: #F6F6F6;
+    padding: 10px 0px 0px 10px;
+    font-size: 20px;
+}
+
+
+.box2{
+    grid-area: box2;
+    background-color: #6B01FF;
+}
+
+.box3{
+    grid-area: box3;
+    padding-left: 10px;
+}
+
+.box3 ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.box3 li{
+    font-size: small;
+    font-weight: 400;
+}
+
+.box3 .box3_header{
+    font-size: x-small;
+    font-weight: 500;
+    padding: 10px 0px 20px 0px;
+}
+
+.box4{
+    grid-area: box4;
+    padding-left: 10px;
+}
+
+.box4 ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box4 li{
+    font-size: small;
+    font-weight: 400;
+}
+
+.box4 .box4_header{
+    font-size: x-small;
+    font-weight: 500;
+    padding: 10px 0px 20px 0px;
+}
+
+
+.box5{
+    grid-area: box5;
+    background-color: #FF1603;
+    color: black;
+    padding: 10px 0px 0px 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.box6{
+    grid-area: box6;
+}
+
+.box7{
+    grid-area: box7;
+    background-color: #FFC906;
+    padding: 10px 0px 0px 10px;
+    font-weight: 500;
+}
