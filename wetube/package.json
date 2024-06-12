@@ -1,0 +1,47 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon",
+    "dev:assets": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pug9483/wetube.git"
+  },
+  "author": "pug9483",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pug9483/wetube/issues"
+  },
+  "homepage": "https://github.com/pug9483/wetube#readme",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "install": "^0.13.0",
+    "mongoose": "^6.2.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "nodemon": "^2.0.12",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
